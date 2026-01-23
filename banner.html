@@ -1,72 +1,82 @@
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div class="banner-container">
+  <div class="banner-overlay"></div>
+
+  <div class="banner-content">
+    <h2>
+      Video Mostra<br>
+      Melhor App de<br>
+      <span class="destaque">OPÇÕES BINÁRIAS</span><br>
+      para<br>
+      <span class="destaque">GANHAR DINHEIRO</span><br>
+      <span class="destaque">em dólar</span>
+    </h2>
+
+    <a href="https://cutt.ly/btzV6MIC" target="_blank" class="cta-btn">
+      Veja por que funciona
+    </a>
+  </div>
+</div>
 
 <style>
-  .banner-pix {
-    width: 300px;
-    height: 250px;
-    background: linear-gradient(135deg, #cfe9ff, #9fd3ff);
-    color: #0a2a4a;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 14px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
+.banner-container {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEgsKFK85yikvglv705gflPlMwo-5nv9NnKXCCBUZmsPWK1npSLnD--_a2wLqv0VFIdkjOFluzsFXba1OxJ8nP6NUCt2dHOU-mInsvgC9kGHmvvzzaUZ-UCoY6YK8Stn0rrQs9sd6RsoI7TXPrAeCpa-prM2haDNInyTTBUcm-aquKFrv7K800wqXkHqlvGD");
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  .banner-pix:hover {
-    transform: scale(1.03);
-  }
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
 
-  .icons {
-    font-size: 42px;
-    margin-bottom: 12px;
-    color: #0077c8;
-  }
+.banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
 
-  .icons i {
-    margin: 0 8px;
-  }
+.banner-content h2 {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.85);
+}
 
-  .banner-pix h2 {
-    font-size: 18px;
-    margin: 6px 10px;
-    line-height: 1.3;
-  }
+.destaque {
+  color: #ffd700;
+  font-weight: 800;
+}
 
-  /* Animação de piscar */
-  @keyframes piscar {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
-  }
+.cta-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0d6efd;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
 
-  .blink {
-    font-size: 16px;
-    margin-top: 12px;
-    font-weight: bold;
-    background: #0077c8;
-    color: #ffffff;
-    padding: 6px 16px;
-    border-radius: 20px;
-    display: inline-block;
-    animation: piscar 1s infinite;
-  }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
 </style>
-
-<a href="https://cutt.ly/vc-doacao" target="_blank" class="banner-pix">
-  <div>
-    <div class="icons">
-      <i class="fa-solid fa-hand-holding-dollar"></i>
-      <i class="fa-brands fa-pix"></i>
-    </div>
-
-    <h2>Ajude a manter o blog<br>com um PIX</h2>
-    <span class="blink">Clique aqui</span>
-  </div>
-</a>

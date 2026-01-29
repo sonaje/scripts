@@ -1,83 +1,103 @@
-<div class="banner-container">
-  <div class="banner-overlay"></div>
-
-  <div class="banner-content">
-    <h2>
-      Video Mostra<br>
-      Melhor App de<br>
-      <span class="destaque">OPÇÕES BINÁRIAS</span><br>
-      para<br>
-      <span class="destaque">GANHAR DINHEIRO</span><br>
-      <span class="destaque">em dólar</span>
-    </h2>
-
-    <a href="https://cutt.ly/btzV6MIC" target="_blank" class="cta-btn">
-      Veja por que funciona
-    </a>
-  </div>
-</div>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-.banner-container {
-  position: relative;
-  width: 300px;
-  height: 250px;
-  background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEgsKFK85yikvglv705gflPlMwo-5nv9NnKXCCBUZmsPWK1npSLnD--_a2wLqv0VFIdkjOFluzsFXba1OxJ8nP6NUCt2dHOU-mInsvgC9kGHmvvzzaUZ-UCoY6YK8Stn0rrQs9sd6RsoI7TXPrAeCpa-prM2haDNInyTTBUcm-aquKFrv7K800wqXkHqlvGD");
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .banner-retro {
+    width: 300px;
+    height: 250px;
+    background-image: url("https://blogger.googleusercontent.com/img/a/AVvXsEildFV5gGg8M81EuRry9Baa2iDmale92fE2IUIUiu4b2rc8Gr5aaYn2FXwaGTpg36VT-XRck5dT7pp2LNSVpTtzMI3egCvYYZGGtGAxt3dt6z0fRZPJDsw4ZV8XYDsOcJjz6dTdw0UFIe0y9OQb-LttHQhj2tLxRAsCWmNG8mNqLgQOKctSBhoFB2NvSjdn=s16000");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
 
-.banner-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
+  .banner-retro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+  }
 
-.banner-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
-}
+  .banner-content {
+    position: relative;
+    z-index: 2;
+  }
 
-.banner-content h2 {
-  font-size: 16px;
-  line-height: 1.2;
-  margin-bottom: 14px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.85);
-}
+  .icons {
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #ffb300;
+  }
 
-.destaque {
-  color: #ffd700;
-  font-weight: 800;
-}
+  .icons i {
+    margin: 0 6px;
+  }
 
-.cta-btn {
-  display: inline-block;
-  padding: 10px 16px;
-  background: #0d6efd;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  animation: pulse 1.5s infinite;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
+  .banner-retro h2 {
+    font-size: 16px;
+    margin: 6px 10px;
+    line-height: 1.35;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
+  .brinde {
+    display: block;
+    font-size: 18px;
+    color: #ffeb3b;
+    margin: 4px 0;
+  }
+
+  @keyframes piscar-suave {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+
+  .blink {
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    background: #ffb300;
+    color: #3e2723;
+    padding: 6px 16px;
+    border-radius: 18px;
+    display: inline-block;
+    animation: piscar-suave 1.6s infinite;
+  }
+
+  .banner-retro:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+  }
 </style>
 
+<a href="https://cutt.ly/ytcncPSC" target="_blank" class="banner-retro">
+  <div class="banner-content">
+    <div class="icons">
+      <i class="fa-solid fa-gift"></i>
+      <i class="fa-solid fa-gamepad"></i>
+    </div>
+
+    <h2>
+      Se você compra na Shopee,<br>
+      você tem direito a um
+      <span class="brinde">BRINDE GAMER 🎁</span>
+      Confira antes que acabe!
+    </h2>
+
+    <span class="blink">Ver na Shopee</span>
+  </div>
+</a>

@@ -1,0 +1,89 @@
+<!-- Banner rotativo leve e compatível com Blogger -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+.rotating-banner {
+  background: #f2f2f2;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  padding: 0 10px;
+  position: relative;
+  overflow: hidden;
+  height: 28px;
+  line-height: 28px;
+  color: #333;
+  max-width: 600px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.rotating-banner .banner-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  pointer-events: none; /* impede clique invisível */
+}
+
+.rotating-banner .banner-text.active {
+  opacity: 1;
+  pointer-events: auto; /* só o ativo pode ser clicado */
+}
+
+.rotating-banner i {
+  margin-right: 6px;
+  color: #007bff;
+}
+
+.rotating-banner a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+
+<div class="rotating-banner" id="bannerRotativo">
+
+  <div class="banner-text active">
+    <i class="fab fa-telegram"></i>
+    <a href="https://t.me/velhoscartuchos" target="_blank">
+      Acesse nosso grupo no Telegram
+    </a>
+  </div>
+
+  <div class="banner-text">
+    <i class="fas fa-hand-holding-heart"></i>
+    <a href="https://cutt.ly/CtxwIigP" target="_blank">
+      Ajude o Blog com 1 clique – CLIQUE AQUI
+    </a>
+  </div>
+
+  <div class="banner-text">
+    <i class="fas fa-gamepad"></i>
+    <a href="https://amzn.to/3OoTvsz" target="_blank">
+      Controle de videogame por menos de R$ 20
+    </a>
+  </div>
+
+</div>
+
+<script>
+(function() {
+  var texts = document.querySelectorAll('#bannerRotativo .banner-text');
+  var index = 0;
+
+  setInterval(function() {
+    texts[index].classList.remove('active');
+    index = (index + 1) % texts.length;
+    texts[index].classList.add('active');
+  }, 4000);
+})();
+</script>

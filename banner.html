@@ -1,45 +1,49 @@
 <div style="width:300px; height:250px; overflow:hidden; position:relative;">
   
-  <a id="linkControle"
+  <a id="bannerLink"
      href="https://dpfh.short.gy/acess-games"
      target="_blank"
      rel="noopener noreferrer"
-     style="position:absolute; top:0; left:0; width:300px; height:250px; pointer-events:auto;">
+     style="display:block; width:300px; height:250px;">
      
-    <img id="bannerControle"
+    <img id="bannerImage"
          src="https://blogger.googleusercontent.com/img/a/AVvXsEiGzzxulnHeNu61ZqGyLi-yQkYWHF8KXdyokEEmmRlOcVLAoHHhuYLVVCLqJS1uiS4577ktT0uEXG4xCMQLepghdJMM9UW-k6dIRSiMz3yKqu0vYjh1XPN6tLat_U6RCoK6cZMpBz5gIxjpuelAGR2ZGPna6itsHUnS2_WyrUTQiE9IdKfybamWBm18PMhq=s16000"
-         style="width:300px; height:250px; transition:opacity 1s; opacity:1;">
-  </a>
-
-  <a id="linkAcessorios"
-     href="https://dpfh.short.gy/amz-controle"
-     target="_blank"
-     rel="noopener noreferrer"
-     style="position:absolute; top:0; left:0; width:300px; height:250px; pointer-events:none;">
-     
-    <img id="bannerAcessorios"
-         src="https://blogger.googleusercontent.com/img/a/AVvXsEiQAtbNQWD3AV1teSifMrRjrVKAGBIbxww9t7qTLV02YtvBIsnPlT5PvXlDY1MeeZEkQ4iuK2YQ81I4jd-P_9WUMCwXkVleUGjeS0tk2bn13M1harduJDXqnSQvI7nHeIMwaiCs5u2QDbddgcuHmlAOXtehcxg4BG1jil_1rzdLtprfxN_xJgtgsvS-4U71=s16000"
-         style="width:300px; height:250px; transition:opacity 1s; opacity:0;">
+         style="width:300px; height:250px; transition:opacity 0.8s; opacity:1;">
+         
   </a>
 
 </div>
 
 <script>
-  let mostrandoControle = true;
-
-  setInterval(function() {
-    if (mostrandoControle) {
-      document.getElementById("bannerControle").style.opacity = "0";
-      document.getElementById("bannerAcessorios").style.opacity = "1";
-      document.getElementById("linkControle").style.pointerEvents = "none";
-      document.getElementById("linkAcessorios").style.pointerEvents = "auto";
-    } else {
-      document.getElementById("bannerControle").style.opacity = "1";
-      document.getElementById("bannerAcessorios").style.opacity = "0";
-      document.getElementById("linkControle").style.pointerEvents = "auto";
-      document.getElementById("linkAcessorios").style.pointerEvents = "none";
+  const banners = [
+    {
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEiGzzxulnHeNu61ZqGyLi-yQkYWHF8KXdyokEEmmRlOcVLAoHHhuYLVVCLqJS1uiS4577ktT0uEXG4xCMQLepghdJMM9UW-k6dIRSiMz3yKqu0vYjh1XPN6tLat_U6RCoK6cZMpBz5gIxjpuelAGR2ZGPna6itsHUnS2_WyrUTQiE9IdKfybamWBm18PMhq=s16000",
+      link: "https://dpfh.short.gy/acess-games"
+    },
+    {
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEiQAtbNQWD3AV1teSifMrRjrVKAGBIbxww9t7qTLV02YtvBIsnPlT5PvXlDY1MeeZEkQ4iuK2YQ81I4jd-P_9WUMCwXkVleUGjeS0tk2bn13M1harduJDXqnSQvI7nHeIMwaiCs5u2QDbddgcuHmlAOXtehcxg4BG1jil_1rzdLtprfxN_xJgtgsvS-4U71=s16000",
+      link: "https://dpfh.short.gy/amz-controle"
+    },
+    {
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEhsJ8nAeawa-gH_XSPl16zNF7U2HacxdJjLKZttlNRKjb-TiqVAgo1mMD913emWu5brJN9sog66PDPWz5tWEntRc290vt8XYv2sn0UWNzmWISxxr1Z_N3_9DB-a6XXRbRubZxkekjP-F-EBYuSo_ePq62etOa7ZbSxGmtczPuO5HI-iM3LB5918-BHzPsnT=s16000",
+      link: "https://cutt.ly/utEBMTeZ"
     }
-    mostrandoControle = !mostrandoControle;
+  ];
+
+  let index = 0;
+  const img = document.getElementById("bannerImage");
+  const link = document.getElementById("bannerLink");
+
+  setInterval(() => {
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+      index = (index + 1) % banners.length;
+      img.src = banners[index].src;
+      link.href = banners[index].link;
+      img.style.opacity = "1";
+    }, 400);
+
   }, 3000);
 </script>
 <!--BANNER ANTIGO
@@ -113,3 +117,4 @@
 </div>
 </body>
 -->
+

@@ -1,20 +1,23 @@
-<div style="width:300px; height:250px; overflow:hidden; position:relative;">
+<div class="rotating-banner" style="width:300px; height:250px; overflow:hidden; position:relative;">
   
-  <a id="bannerLink"
+  <a class="bannerLink"
      href="https://dpfh.short.gy/acess-games"
      target="_blank"
      rel="noopener noreferrer"
      style="display:block; width:300px; height:250px;">
      
-    <img id="bannerImage"
+    <img class="bannerImage"
          src="https://blogger.googleusercontent.com/img/a/AVvXsEiGzzxulnHeNu61ZqGyLi-yQkYWHF8KXdyokEEmmRlOcVLAoHHhuYLVVCLqJS1uiS4577ktT0uEXG4xCMQLepghdJMM9UW-k6dIRSiMz3yKqu0vYjh1XPN6tLat_U6RCoK6cZMpBz5gIxjpuelAGR2ZGPna6itsHUnS2_WyrUTQiE9IdKfybamWBm18PMhq=s16000"
-         style="width:300px; height:250px; transition:opacity 0.8s; opacity:1;">
+         alt="Banner promocional"
+         style="width:300px; height:250px; object-fit:cover;">
          
   </a>
 
 </div>
 
 <script>
+(function() {
+
   const banners = [
     {
       src: "https://blogger.googleusercontent.com/img/a/AVvXsEiGzzxulnHeNu61ZqGyLi-yQkYWHF8KXdyokEEmmRlOcVLAoHHhuYLVVCLqJS1uiS4577ktT0uEXG4xCMQLepghdJMM9UW-k6dIRSiMz3yKqu0vYjh1XPN6tLat_U6RCoK6cZMpBz5gIxjpuelAGR2ZGPna6itsHUnS2_WyrUTQiE9IdKfybamWBm18PMhq=s16000",
@@ -29,26 +32,26 @@
       link: "https://cutt.ly/utEBMTeZ"
     },
     {
-    src: "https://blogger.googleusercontent.com/img/a/AVvXsEgrh0FLAsEJzrvvD5wP8PduRac0GY1vhlyxm19XP-YR9FBBOQfAMhHA24HfCQi6WJcF9SM5RnV0GaO5G8_69qjtEJ69aC0n-Dj3vZJphHUpM0Nwjvy89D2WSyaJQw1wgV6_vSnnuV6fKRbAgxK9DpGw5lVH1yT_KPCQhwT-Op0DhlUWAAorACo-SiiAbBCI=w400-h334",
-    link: "https://dpfh.short.gy/calça-jeans-vc"
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEgrh0FLAsEJzrvvD5wP8PduRac0GY1vhlyxm19XP-YR9FBBOQfAMhHA24HfCQi6WJcF9SM5RnV0GaO5G8_69qjtEJ69aC0n-Dj3vZJphHUpM0Nwjvy89D2WSyaJQw1wgV6_vSnnuV6fKRbAgxK9DpGw5lVH1yT_KPCQhwT-Op0DhlUWAAorACo-SiiAbBCI=w400-h334",
+      link: "https://dpfh.short.gy/calça-jeans-vc"
     }
   ];
 
-  let index = 0;
-  const img = document.getElementById("bannerImage");
-  const link = document.getElementById("bannerLink");
+  const containers = document.querySelectorAll(".rotating-banner");
 
-  setInterval(() => {
-    img.style.opacity = "0";
+  containers.forEach(container => {
+    let index = 0;
+    const img = container.querySelector(".bannerImage");
+    const link = container.querySelector(".bannerLink");
 
-    setTimeout(() => {
+    setInterval(() => {
       index = (index + 1) % banners.length;
       img.src = banners[index].src;
       link.href = banners[index].link;
-      img.style.opacity = "1";
-    }, 400);
+    }, 3000);
+  });
 
-  }, 3000);
+})();
 </script>
 <!--BANNER ANTIGO
 <html lang="pt-br">
@@ -121,5 +124,6 @@
 </div>
 </body>
 -->
+
 
 
